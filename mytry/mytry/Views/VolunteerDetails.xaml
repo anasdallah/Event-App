@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mytry.Views.VolunteerDetails">
+    <ContentPage.ToolbarItems>
+
+        <ToolbarItem x:Name="tbiDelete" 
+                     Text="Delete" 
+                     Clicked="tbiDelete_Clicked"
+                     Order="Primary"
+                     Priority="0"/>
+
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Image Source="Voulnteer.png" HeightRequest="100" WidthRequest="100"/>
+
+                <Label Text="Volunteer Name"/>
+                <Entry x:Name="entName" Placeholder="Volunteer Name" Text="{Binding Name}"/>
+                
+                
+                <Label Text="Volunteer Password"/>
+                <Entry x:Name="entPassword" Placeholder="Volunteer Password" Text="{Binding Password}" IsPassword="True"/>
+                
+                
+                <Label Text="Volunteer PhoneNo"/>
+                <Entry x:Name="entPhoneNo" Placeholder="Volunteer PhoneNo" Text="{Binding PhoneNo}" Keyboard="Numeric"/>
+
+                <StackLayout Orientation="Horizontal" Spacing="25">
+                    <Label Text="Volunteer Age"  FontSize="Large" />
+                    <Stepper x:Name="stpAge"
+                         Value="{Binding Age}"
+                         Minimum="0"
+                         Maximum="40"
+                         ValueChanged="stpAge_ValueChanged" 
+                         Increment="1"
+                         />
+                    <Label x:Name="lblAge"  FontSize="Large" />
+                </StackLayout>
+
+
+
+                <Label Text="Job Title:"/>
+                <Entry x:Name="edtJobTitle" 
+                       Text="{Binding JobTitle}"/>
+                
+                
+                <StackLayout Orientation="Horizontal" Spacing="25">
+                    <Label Text="Is Avilabel?" FontSize="Large" FontAttributes="Bold"/>
+                    <Switch x:Name="switchIsAvilabel" IsToggled="{Binding IsAvilabel}"/>
+                </StackLayout>
+
+                <Button x:Name="btnSave"
+                    Text="Save" 
+                    BorderRadius="15" 
+                    BackgroundColor="DodgerBlue" 
+                    TextColor="White" 
+                    WidthRequest="200"
+                    Clicked="btnSave_Clicked"/>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

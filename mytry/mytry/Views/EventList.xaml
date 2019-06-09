@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mytry.Views.EventList" 
+             Title="List Of Events">
+    <!--
+        <NavigationPage.TitleView>
+            <Slider x:Name="slOpacity"
+                    Minimum="0"
+                    Maximum="1"
+                    Value="0.5"
+                    WidthRequest="300"
+                    MaximumTrackColor="Yellow"
+                    MinimumTrackColor="White"
+                    ThumbColor="Gray"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand" />
+        </NavigationPage.TitleView>-->
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="tbiEventSelected" Text="" Priority="0" Order="Secondary" Clicked="tbiEventSelected_Clicked_1"/>
+        <ToolbarItem x:Name="UpdateTheEvent" Text="Update the event" Priority="1" Order="Secondary" Clicked="UpdateTheEvent_Clicked"/>
+        <ToolbarItem x:Name="SortByTitle" Text="Sort the events by title ascending" Priority="2"  Order="Secondary" Clicked="SortByTitle_Clicked"/>
+        <ToolbarItem x:Name="SortByTitleDesc" Text="Sort the events by title descending" Priority="3"  Order="Secondary" Clicked="SortByTitleDesc_Clicked"/>
+
+    </ContentPage.ToolbarItems>
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+
+            <RowDefinition Height="2*"/>
+
+        </Grid.RowDefinitions>
+        <SearchBar x:Name="sbEvents" 
+                   Placeholder="Search for a Event"
+                   SearchButtonPressed="sbEvents_SearchButtonPressed"
+                   TextChanged="sbEvents_TextChanged"
+                   Grid.Row="0"/>
+
+        <ListView x:Name="lsvEvent"
+                  HasUnevenRows="True" 
+                  SeparatorColor="Black"
+                  Margin="5,0"
+                  VerticalOptions="FillAndExpand" 
+                  Grid.Row="1" 
+                  IsPullToRefreshEnabled="True" 
+                  Refreshing="lsvEvent_Refreshing"
+                  
+                  ItemSelected="lsvEvent_ItemSelected">
+
+            <!--ItemTapped="lsvEvent_ItemTapped"-->
+            <ListView.ItemTemplate >
+
+                <DataTemplate x:Name="dtemp">
+
+
+                    <ViewCell x:Name="vc">
+                        <ViewCell.View>
+                            <StackLayout Orientation="Horizontal" x:Name="stk1">
+                                <Image Source="ListEvent.png" HeightRequest="75" WidthRequest="75"/>
+                                <StackLayout Orientation="Vertical" Padding="10" x:Name="stk2">
+                                    <Label Text="{Binding Id}"/>
+                                    <Label Text="{Binding Title}"/>
+                                    <!--<StackLayout Orientation="Horizontal">
+                                        <Label Text="Volunteer Number: "  />
+                                        <Label Text="{Binding VolunteerNo}"/>
+                                    </StackLayout>-->
+                                    <Label Text="{Binding Detail}"/>
+                                    <Label Text="{Binding EventDate,,StringFormat='d'}"/>
+                                </StackLayout>
+
+                            </StackLayout>
+                        </ViewCell.View>
+
+                    </ViewCell>
+
+                </DataTemplate>
+
+
+            </ListView.ItemTemplate>
+
+        </ListView>
+
+        <Button x:Name="btnAddEvent" 
+                BorderRadius="90"
+                BorderWidth="0.5"
+                BorderColor="Transparent"  
+                BackgroundColor="DodgerBlue" 
+                TextColor="White"
+                Grid.Row="1"
+                WidthRequest="56"
+                HeightRequest="56"
+                FontSize="25"
+                Text="+"
+                Clicked="btnAddEvent_Clicked" 
+                VerticalOptions="End" 
+                HorizontalOptions="EndAndExpand"
+                Margin="0,0,20,20" 
+                />
+        <Button x:Name="btnFiltering" 
+                BorderRadius="90"
+                BorderWidth="0.5"
+                BorderColor="Transparent"  
+                BackgroundColor="IndianRed" 
+                TextColor="White"
+                Grid.Row="1"
+                WidthRequest="56"
+                HeightRequest="56"
+                FontSize="25"
+                Text="F"
+                Clicked="btnFiltering_Clicked" 
+                VerticalOptions="End" 
+                HorizontalOptions="EndAndExpand"
+                Margin="0,0,20,80" 
+                />
+
+
+    </Grid>
+
+
+</ContentPage>

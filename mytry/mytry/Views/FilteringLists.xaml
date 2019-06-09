@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mytry.Views.FilteringLists"
+             Title="Filter Events By Location">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Filter Events By Location"/>
+            <Picker x:Name="picker"
+                    Title="Pick Event Address"
+                    SelectedItem="{Binding Address}"
+                >
+            </Picker>
+            <Button Text="Go!"
+                x:Name="NavBack"
+                Clicked="NavBack_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

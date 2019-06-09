@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mytry.Views.VolunteerList"
+             Title="List Of Volunteers">
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="*"/>
+
+        </Grid.RowDefinitions>
+        <!--
+ <StackLayout Orientation="Horizontal">
+            <Slider x:Name="Age" Grid.Row="0" WidthRequest="100" Value="18" Minimum="0" Maximum="50" ValueChanged="Age_ValueChanged" MaximumTrackColor="Green" MinimumTrackColor="Red" />
+            <Label x:Name="lblSlider" />
+        </StackLayout>-->
+        <ListView x:Name="lsvVolunteer"
+                  HasUnevenRows="True" 
+                  SeparatorColor="Black"
+                  Margin="5,0"
+                  VerticalOptions="FillAndExpand" 
+                  Grid.Row="0" 
+                  IsPullToRefreshEnabled="True" 
+                  ItemTapped="lsvVolunteer_ItemTapped"
+                  Refreshing="lsvVolunteer_Refreshing">
+
+            <ListView.ItemTemplate>
+
+                <DataTemplate>
+
+                    <ImageCell Text="{Binding Name}"  Detail="{Binding JobTitle}" ImageSource="volunteerList.png"/>
+
+
+                </DataTemplate>
+
+            </ListView.ItemTemplate>
+
+        </ListView>
+
+        <Button x:Name="btnAddVolunteer" 
+                BorderRadius="90"
+                BorderWidth="0.5"
+                BorderColor="Transparent"  
+                BackgroundColor="DodgerBlue" 
+                TextColor="White"
+                Grid.Row="0"
+                WidthRequest="56"
+                HeightRequest="56"
+                FontSize="25"
+                Text="+"
+                Clicked="btnAddVolunteer_Clicked" 
+                VerticalOptions="End" 
+                HorizontalOptions="EndAndExpand"
+                Margin="0,0,20,20" 
+                />
+
+    </Grid>
+
+</ContentPage>

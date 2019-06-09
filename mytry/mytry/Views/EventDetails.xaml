@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mytry.Views.EventDetails"
+             >
+    <ContentPage.ToolbarItems>
+
+        <ToolbarItem x:Name="tbiDelete" 
+                     Text="Delete" 
+                     Clicked="tbiDelete_Clicked"
+                     Order="Primary"
+                     Priority="0"/>
+
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Image Source="Event.png" HeightRequest="100" WidthRequest="100"/>
+
+                <Label Text="Event Title"/>
+                <Entry x:Name="entTitle" Placeholder="Event Title" Text="{Binding Title}"/>
+
+                <Label Text="Event Address"/>
+                <Picker x:Name="picker"
+                        Title="Pick Event Address"
+                        SelectedItem="{Binding Address}">
+                </Picker>
+
+                <Label Text="Event Date:"/>
+                <DatePicker x:Name="dtPicker"
+                            MinimumDate="06/03/2019"
+                            MaximumDate="12/31/2019"
+                            Date="{Binding EventDate}"
+                            Format="D"
+                            />
+
+
+
+                <Label Text="Details:"/>
+                <Editor x:Name="edtDetail" HeightRequest="150" Text="{Binding Detail}"/>
+                
+                <Button x:Name="btnSave"
+                    Text="Save Event" 
+                    BorderRadius="15" 
+                    BackgroundColor="DodgerBlue" 
+                    TextColor="White" 
+                    WidthRequest="200"
+                    Clicked="btnSave_Clicked"/>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

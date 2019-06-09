@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:mytry"
+             x:Class="mytry.Views.DefualtCase">
+
+    <StackLayout>
+        <Entry x:Name="entstdName" Placeholder="Voulnteer Name"/>
+        <Entry x:Name="entCouName" Placeholder="Event Name"/>
+        <Entry x:Name="entMarks" Placeholder="Mark"/>
+        <Button x:Name="Save" Text="Save" Clicked="Save_Clicked"/>
+        <Button x:Name="Show" Text="Show" Clicked="Show_Clicked"    />
+        <ListView x:Name="lsvVolunteer">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Label Text="{Binding Name}"/>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            
+        </ListView>
+        <ListView x:Name="lsvEvent">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Label Text="{Binding Title}"/>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+
+        <ListView x:Name="lsvEventVoulnteer">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Label Text="{Binding Mark}"/>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mytry.Views.Login"
+             BackgroundImage="Login.jpg"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" Spacing="70">
+            
+            <StackLayout>
+                <Label Text="Event App" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" FontSize="35"/>
+
+                <Image Source="userIcon.png" HeightRequest="150" WidthRequest="100" Opacity="0.75" Margin="0,-20,0,0"/>
+            </StackLayout>
+            
+            
+            <StackLayout Padding="10,0,10,0">
+                <Entry x:Name="entUsername" TextColor="Black" Placeholder="Username" PlaceholderColor="Black" Keyboard="Email"/>
+
+                <Entry x:Name="entPassword" TextColor="Black" Placeholder="Password" PlaceholderColor="Black" IsPassword="True"/>
+            </StackLayout>
+            
+            
+            <StackLayout Orientation="Vertical" Spacing="10" Padding="20,0,20,0">
+                <Button x:Name="btnSignin" Text="Sign in" BackgroundColor="IndianRed"  VerticalOptions="End" Clicked="btnSignin_Clicked" BorderRadius="25" />
+
+                <Button x:Name="btnSignUp" Text="Sign up" BackgroundColor="IndianRed" VerticalOptions="End" Clicked="btnSignUp_Clicked" BorderRadius="25" />
+                
+                <Button x:Name="btnForgetPassword" Text="Forget Password?" BackgroundColor="Transparent" TextColor="DodgerBlue" HorizontalOptions="Start"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
