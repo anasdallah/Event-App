@@ -1,5 +1,5 @@
 # Event-App
-Event application using Xamarin.Forms  and sqlite.
+Event application using Xamarin.Forms and sqlite, many to many relationship.
 ### Author
 Anas Al Dallah
 ### For
