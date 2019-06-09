@@ -11,4 +11,6 @@ OOP, sqlite , visual studio, xamarin.forms
 
 ### GIF
 ![EventApp](https://github.com/anasdallah/Event-App/blob/master/GIF%20EventApp.gif =250x250)
-<img src="https://camo.githubusercontent.com/..." data-canonical-src="https://github.com/anasdallah/Event-App/blob/master/GIF%20EventApp.gif" width="200" height="400" />
+
+<img src="https://github.com/anasdallah/Event-App/blob/master/GIF%20EventApp.gif"  width="200" height="400" />
+
