@@ -9,6 +9,9 @@ C#
 ### Need To Know
 OOP, sqlite , visual studio, xamarin.forms
 
+### Project Details
+
+
 ### GIF
 
 <img src="https://github.com/anasdallah/Event-App/blob/master/GIF%20EventApp.gif"  width="300" height="520" />
