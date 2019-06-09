@@ -10,4 +10,4 @@ C#
 OOP, sqlite , visual studio, xamarin.forms
 
 ### GIF
-EventApp.gif	
+https://github.com/anasdallah/Event-App/blob/master/GIF%20EventApp.gif?raw=true
